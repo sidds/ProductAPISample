@@ -22,6 +22,8 @@ namespace WebTier.Controllers
         {
             ViewData["Title"] = "Product APIs";
             ViewData["Header"] = "Amazon Product Advertising APIs";
+            ViewData["Logo"] = "../Content/AmazonLogo.jpg";
+            ViewData["LogoAltText"] = "Amazon Logo";
 
             return View("Amazon");
         }
@@ -30,10 +32,6 @@ namespace WebTier.Controllers
         {
             ViewData["Title"] = "Product APIs";
             ViewData["Header"] = "Google Maps APIs";
-            ViewData["Logo"]= "../Content/powered-by-google.png";
-            ViewData["LogoAltText"] = "Google Logo";
-            ViewData["GooglePlacesUri"] = "https://maps.googleapis.com/maps/api/place/search/json";
-            ViewData["GooglePlacesKey"] = ConfigurationManager.AppSettings["GooglePlacesKey"];
             return View("EBay");
         }
     }
