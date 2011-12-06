@@ -14,22 +14,13 @@
         <div id="header">
             <div id="menucontainer">
                 <ul id="menu">              
-                    <li><%: Html.ActionLink("Google", "Google", "Home")%></li>
-                    <li><%: Html.ActionLink("Nokia", "Nokia", "Home")%></li>
-                    <li><%: Html.ActionLink("4Square", "FourSquare", "Home")%></li>
-                    <li><%: Html.ActionLink("<Yahoo>", "Yahoo", "Home")%></li>
-                    <li><%: Html.ActionLink("Bing", "Bing", "Home")%></li>
-                    <li><%: Html.ActionLink("Yelp", "Yelp", "Home")%></li>
-                    <li><%: Html.ActionLink("CityGrid", "CityGrid", "Home")%></li>
-                    <li><%: Html.ActionLink("YP", "YellowPages", "Home")%></li>
-                    <li><%: Html.ActionLink("Edmonds", "Edmonds", "Home")%></li>
-                    <li><%: Html.ActionLink("3Taps", "ThreeTaps", "Home")%></li>
-                    <li><%: Html.ActionLink("<Amazon>", "Amazon", "Home")%></li>
+                    <li><%: Html.ActionLink("Amazon", "Amazon", "Home")%></li>
                     <li><%: Html.ActionLink("<BestBuy>", "BestBuy", "Home")%></li>
                     <li><%: Html.ActionLink("<EBay>", "EBay", "Home")%></li>
                     <li><%: Html.ActionLink("<Shopzilla>", "ShopZilla", "Home")%></li>
                     <li><%: Html.ActionLink("<Shopping.com>", "ShoppingCom", "Home")%></li>
                     <li><%: Html.ActionLink("<Etsy>", "Etsy", "Home")%></li>
+                    <li><%: Html.ActionLink("<Walmart>", "Walmart", "Home")%></li>
                 </ul>
             
             </div>

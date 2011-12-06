@@ -4,6 +4,10 @@ using System.Linq;
 using System.Web;
 using System.Web.Mvc;
 using System.Web.Routing;
+using System.ServiceModel;
+using System.ServiceModel.Routing;
+using System.ServiceModel.Activation;
+using WcfProductService;
 
 namespace WebTier
 {
@@ -19,9 +23,11 @@ namespace WebTier
             routes.MapRoute(
                 "Default", // Route name
                 "{controller}/{action}/{id}", // URL with parameters
-                new { controller = "Home", action = "Google", id = UrlParameter.Optional } // Parameter defaults
+                new { controller = "Home", action = "Amazon", id = UrlParameter.Optional }, // Parameter defaults
+                new { controller = "^(?!Product).*" } // ensure it falls thru if the base is "Product"
             );
 
+            routes.Add(new ServiceRoute("Product", new WebServiceHostFactory(), typeof(ProductService)));
         }
 
         protected void Application_Start()

@@ -1,3 +1,5 @@
+
+// Posts JSON via AJAX
 $.postJSON = function (url, data, callback) {
     $.ajax({
         'url': url,
@@ -8,7 +10,6 @@ $.postJSON = function (url, data, callback) {
         success: function (data) { if (null != callback) { callback(data); } }
     });
 };
-
 
 function GetTabString(tabLevel) {
     var returnString = '';
