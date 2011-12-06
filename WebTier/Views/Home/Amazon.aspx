@@ -41,7 +41,6 @@
 
         function showSearchResults(JSONdata) {
 
-            clearSearchResults();
             // alert($.printableJSON(JSONdata, 0));
 
             var searchResult = JSONdata.SearchResult;
@@ -81,7 +80,8 @@
 
         function SearchByKeyword(productType, searchTerm) {
 	        // alert("Post productType: " + productType + " , searchTerm: " + searchTerm);
-	        var dataToPost = { SearchIndex: productType, 
+            clearSearchResults();
+            var dataToPost = { SearchIndex: productType, 
 			                   Keywords: searchTerm };
 			$.postJSON("../Product/amzn/search", dataToPost, showSearchResults);
         };
