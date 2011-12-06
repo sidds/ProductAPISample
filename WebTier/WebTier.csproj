@@ -83,6 +83,9 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="Amazon\AWSECommerceService.wsdl.xml" />
+    <Content Include="Content\AmazonLogo.jpg">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
     <Content Include="Global.asax" />
     <Content Include="Scripts\JSONHelp.js" />
     <Content Include="Views\Home\EBay.aspx" />
