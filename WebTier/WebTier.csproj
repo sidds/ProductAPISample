@@ -86,6 +86,9 @@
     <Content Include="Content\AmazonLogo.jpg">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
+    <Content Include="Content\BestBuyLogo.gif">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
     <Content Include="Global.asax" />
     <Content Include="Scripts\JSONHelp.js" />
     <Content Include="Views\Home\BestBuy.aspx" />
