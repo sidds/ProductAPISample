@@ -88,6 +88,7 @@
     </Content>
     <Content Include="Global.asax" />
     <Content Include="Scripts\JSONHelp.js" />
+    <Content Include="Views\Home\BestBuy.aspx" />
     <Content Include="Views\Home\EBay.aspx" />
     <Content Include="Views\Home\Amazon.aspx" />
     <Content Include="Web.config" />

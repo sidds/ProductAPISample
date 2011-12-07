@@ -18,6 +18,18 @@ namespace WebTier.Controllers
         }
 
 
+        public ActionResult BestBuy()
+        {
+            ViewData["Title"] = "Product APIs";
+            ViewData["Header"] = "BBYOpen (Best Buy) APIs";
+            ViewData["Logo"] = "../Content/BestBuyLogo.gif";
+            ViewData["LogoAltText"] = "BestBuy Logo";
+            ViewData["BBYOpenUri"] = "http://api.remix.bestbuy.com/v1";
+            ViewData["BBYApiKey"] = ConfigurationManager.AppSettings["BBYApiKey"];
+
+            return View("BestBuy");
+        }
+
         public ActionResult Amazon()
         {
             ViewData["Title"] = "Product APIs";
