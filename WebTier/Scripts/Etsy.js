@@ -96,7 +96,10 @@ RetailNamespace.EtsyProvider.prototype.listingToCanonical = function (etsyListin
     listing.totalNew = etsyListing.quantity;
     listing.lowestNewPrice = etsyListing.price;
     listing.lowestNewListingId = etsyListing.listing_id;
-    listing.lowestNewCartUrl = this.AddListingToCart;
+
+    // this is the Url to the forum discussion asking Etsy for anonymous carts
+    listing.lowestNewCartUrl = "http://groups.google.com/group/etsy-api-v2/browse_thread/thread/4cea64c1da580ab8/bb7cf908d70b2ab7?lnk=gst&q=get+cart#bb7cf908d70b2ab7";
+
     // don't know if Etsy has used listings
     listing.totalUsed = 0;
     listing.lowestUsedPrice = "";
