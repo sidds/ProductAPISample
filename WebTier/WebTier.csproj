@@ -90,10 +90,22 @@
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
     <Content Include="Global.asax" />
+    <Content Include="Scripts\BBY.js" />
+    <Content Include="Scripts\Etsy.js">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
     <Content Include="Scripts\JSONHelp.js" />
+    <Content Include="Scripts\RetailApplication.js" />
+    <Content Include="Scripts\RetailNamespace.js">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Scripts\UtilNamespace.js">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
     <Content Include="Views\Home\BestBuy.aspx" />
     <Content Include="Views\Home\EBay.aspx" />
     <Content Include="Views\Home\Amazon.aspx" />
+    <Content Include="Views\Home\Etsy.aspx" />
     <Content Include="Web.config" />
     <Content Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>

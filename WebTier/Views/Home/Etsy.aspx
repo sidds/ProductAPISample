@@ -1,38 +1,32 @@
 <%@ Page Language="C#" MasterPageFile="~/Views/Shared/Site.Master" Inherits="System.Web.Mvc.ViewPage" %>
 
 <asp:Content ID="Content2" ContentPlaceHolderID="MainContent" runat="server">
+      
 <script type="text/javascript" src="/../Scripts/JSONHelp.js"></script>
 <script type="text/javascript" src="/../Scripts/UtilNamespace.js"></script>
 <script type="text/javascript" src="/../Scripts/RetailNamespace.js"></script>
-<script type="text/javascript" src="/../Scripts/BBY.js"></script>
+<script type="text/javascript" src="/../Scripts/Etsy.js"></script>
 <script type="text/javascript" src="/../Scripts/RetailApplication.js"></script>
 <script type="text/javascript">
 
-  var bbyProvider = new RetailNamespace.BBYProvider('<%:ViewData["BBYOpenUri"]%>', 
-						    '<%:ViewData["BBYApiKey"]%>');
+  var etsyProvider = new RetailNamespace.EtsyProvider('<%:ViewData["EtsyApiUri"]%>', '<%:ViewData["EtsyApiKey"]%>');
 
   $(function () {
-      bbyProvider.GetMetadata(populateSearchOptions);
+      // etsyProvider.GetCategories(populateCategoryChooser);
+      etsyProvider.GetMetadata(populateSearchOptions);
   });
+
 
 </script>
 
 <div id="SearchAPI" style="display:block">
-        <p>
-            This sample shows how to access information in the BestBuy BBYOPEN API which exposes
-            the product, price, review and store information. Additionally, there is a commerce
-            API in beta (by invitation only) that allows for e-commerce (purchase and fulfilment)
-            via API calls. The developer site is <a href="http://bbyopen.com">here</a>. Terms
-            of usage are <a href="https://bbyopen.com/bbyopen-terms-service">here</a>. There
-            are limits of 5 cals per second and 50000 calls per day. Very interestingly, they
-            also provide daily "archives" that can be used for information that isn't so real-time-sensitive.
-            This drastically cuts down on the need to use the API for things like store information
-            (apparently this is what they do to populate Google shopping). There is also an
-            Affiliate program that allows the publisher (like this application) to get paid
-            if the user makes a purchase on bestbuy.com. While proper use of the API would involve
-            a bunch of this happening at the server-side, this prototype is entirely Javascript
-            on the client.
-        </p>
+    <p>
+        This sample shows how to access information in the Etsy API which exposes the product, price, review and store information. 
+        The developer site is <a href="http://www.etsy.com/developers">here</a>.
+        Terms of usage are <a href="http://www.etsy.com/developers/terms-of-use">here</a>. 
+        There are limits of 5 cals per second and 5000 calls per day.
+	    Interestingly, there isn't an affiliates program yet! But there are lots of asks for it, so I expect Etsy will add it soon.
+      </p>
      <table>
         <thead>
             <tr>
@@ -42,10 +36,9 @@
             </td>
             <td>
             <b>Categories</b> <br />
-                        Categories are organized in a multi-level hierarchy. Each category result has a
-                        title and a hierarchy path. Since each call ony returns 10 results (with a link
-                        to the next page), the category hierarchy is not complete. It needs to be reconstrucuted
-                        as a tree for pretty printing (have not done that here).
+                Categories are organized in a multi-level hierarchy. Each category result has a title and a hierarchy path. 
+                The Etsy API requries multiple calls to retrieve the hierarchy, which I have not implemented here, so only
+                showing the top level of the hierarchy.
             </td>
             </tr>
         </thead>
@@ -59,9 +52,7 @@
                             <td>
                               Category <br />
                               <select id="CategoryChooser" class="DropdownList" name="Category">
-                              <option value="Cameras*"> Cameras </option>
-                              <option value="Computers & Tablets*"> Computers </option>
-                              <option value="TV*"> TV and Video </option>
+                              <option value=""> Any </option>
                               </select>
                             </td>
                             <td>
@@ -78,24 +69,23 @@
                             </td>
                             <td>
                               MaxPrice USD
-                              <input type="text" name="MaxPrice" value="100"/>
+                              <input type="text" name="MaxPrice" value="50"/>
                             </td>
                          </tr>
                          <tr>
                            <td>
-                              Keywords : <input type="text" name="SearchTerm" value="digital SLR camera bag"/> <br />
+                              Keywords : <input type="text" name="SearchTerm" value="kumihimo necklace"/> <br />
                            </td>
                            <td>
                               Order Results By <br />
                               <select id="SortChooser" class="DropdownList" name="SortOrder">
-                              <option value=""> Any </option>
                               </select>
                            </td>
                          </tr>
                       </tbody>
                     </table>
                     <input type="button" value="Search" 
-                           onclick="clearSearchResults();bbyProvider.GetListings(
+                           onclick="clearSearchResults();etsyProvider.GetListings(
                                                               this.form.CategoryChooser.value, 
                                                               GetColor(this.form), 
                                                               this.form.MinReviewAverage.value, 
@@ -106,8 +96,8 @@
                 </form> 
             </td>
             <td>
-                <form action="BestBuy.aspx">
-                    <input type="button" value="Get Categories" onclick="bbyProvider.GetCategories(ShowCategories);" />
+                <form action="Etsy.aspx">
+                    <input type="button" value="Get Categories" onclick="etsyProvider.GetCategories(ShowCategories);" />
                 </form>                                 
             </td>
         </tr>
@@ -135,4 +125,5 @@
             </tbody>
         </table>
      </div>
+    
 </asp:Content>

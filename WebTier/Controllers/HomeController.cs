@@ -40,6 +40,20 @@ namespace WebTier.Controllers
             return View("Amazon");
         }
 
+        public ActionResult Etsy()
+        {
+            ViewData["Title"] = "Product APIs";
+            ViewData["Header"] = "Etsy APIs";
+            ViewData["Logo"] = "../Content/EtsyLogo.jpg";
+            ViewData["LogoAltText"] = "Etsy Logo";
+            // ViewData["EtsyApiUri"] = "http://sandbox.openapi.etsy.com/v2";
+            ViewData["EtsyApiUri"] = "http://openapi.etsy.com/v2";
+            ViewData["EtsyApiKey"] = ConfigurationManager.AppSettings["EtsyApiKey"];
+            ViewData["EtsySharedSecret"] = ConfigurationManager.AppSettings["EtsySharedSecret"];
+
+            return View("Etsy");
+        }
+
         public ActionResult EBay()
         {
             ViewData["Title"] = "Product APIs";

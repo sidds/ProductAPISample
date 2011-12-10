@@ -16,10 +16,10 @@
                 <ul id="menu">              
                     <li><%: Html.ActionLink("Amazon", "Amazon", "Home")%></li>
                     <li><%: Html.ActionLink("BestBuy", "BestBuy", "Home")%></li>
+                    <li><%: Html.ActionLink("Etsy", "Etsy", "Home")%></li>
                     <li><%: Html.ActionLink("<EBay>", "EBay", "Home")%></li>
                     <li><%: Html.ActionLink("<Shopzilla>", "ShopZilla", "Home")%></li>
                     <li><%: Html.ActionLink("<Shopping.com>", "ShoppingCom", "Home")%></li>
-                    <li><%: Html.ActionLink("<Etsy>", "Etsy", "Home")%></li>
                     <li><%: Html.ActionLink("<Walmart>", "Walmart", "Home")%></li>
                 </ul>
             
