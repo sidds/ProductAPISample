@@ -89,6 +89,9 @@
     <Content Include="Content\BestBuyLogo.gif">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
+    <Content Include="Content\EtsyLogo.jpg">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
     <Content Include="Global.asax" />
     <Content Include="Scripts\BBY.js" />
     <Content Include="Scripts\Etsy.js">
